@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    border-color: rgba(34, 49, 79, 0.6);
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-navy-950 text-slate-200 font-sans antialiased;
+    font-feature-settings: 'cv11', 'ss01';
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-navy-900;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-navy-700 rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-navy-600;
+  }
+}
+
+@layer components {
+  .panel {
+    @apply bg-navy-850 border border-navy-700 rounded-xl;
+  }
+
+  .panel-hover {
+    @apply bg-navy-850 border border-navy-700 rounded-xl transition-all duration-200 hover:border-cyan-700 hover:shadow-lg hover:shadow-cyan-900/20;
+  }
+
+  .btn-primary {
+    @apply px-4 py-2.5 rounded-lg bg-cyan-600 text-white font-medium text-sm transition-all duration-200 hover:bg-cyan-500 hover:shadow-lg hover:shadow-cyan-900/40 active:scale-[0.98] disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .btn-secondary {
+    @apply px-4 py-2.5 rounded-lg bg-navy-700 text-slate-200 font-medium text-sm border border-navy-600 transition-all duration-200 hover:bg-navy-600 hover:border-cyan-700 active:scale-[0.98] disabled:opacity-50;
+  }
+
+  .btn-danger {
+    @apply px-4 py-2.5 rounded-lg bg-danger-600 text-white font-medium text-sm transition-all duration-200 hover:bg-danger-500 active:scale-[0.98] disabled:opacity-50;
+  }
+
+  .btn-ghost {
+    @apply px-3 py-2 rounded-lg text-slate-400 text-sm transition-all duration-200 hover:text-cyan-300 hover:bg-navy-800;
+  }
+
+  .input-field {
+    @apply w-full px-3.5 py-2.5 rounded-lg bg-navy-900 border border-navy-600 text-slate-100 text-sm placeholder-slate-500 transition-all duration-200 focus:outline-none focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500;
+  }
+
+  .label-field {
+    @apply block text-xs font-medium text-slate-400 uppercase tracking-wider mb-1.5;
+  }
+
+  .status-dot {
+    @apply inline-block w-2 h-2 rounded-full;
+  }
+
+  .grid-bg {
+    background-image:
+      linear-gradient(rgba(34, 211, 238, 0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(34, 211, 238, 0.03) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+}
